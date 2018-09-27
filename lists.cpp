@@ -94,57 +94,28 @@ int main()
     int k,x,len,p;
     LinearList <int> obj;
     
+    obj.Insert(0,10);
+    obj.Insert(1,7);
+    obj.Insert(2,5);
+    
+    obj.Output();
+    cout<<endl;
     
     
-    do
-    {
-        menu();
-        cout<<"enter choice\t";
-        cin>>ch;
-        switch(ch) {
-            case 1:
-                len=obj.Length();
-                if(len==0)
-                    cout<<"List is empty\n";
-                else
-                    cout<<"length of linearlist is "<<len<<endl;
-                break;
-            case 2:
-                cout<<"enter k,x(position and value)\n";
-                cin>>k>>x;
-                p=obj.Find(k,x);
-                if(p==1)
-                    cout<<"found"<<endl;
-                if(p==0)
-                    cout<<"not found"<<endl;
-                break;
-            case 3:
-                cout<<"enter x(value)\n";
-                cin>>x;
-                p=obj.Search(x);
-                if(p)
-                    cout<<"searching is sucessful and found at"<<p<<endl;
-                else
-                    cout<<"searching not sucessful"<<endl;
-                break;
-            case 4:
-                cout<<"enter k,x(position and value)\n";
-                cin>>k>>x;
-                obj.Delete(k,x);
-                break;
-            case 5:
-                cout<<"enter k,x(index and value)\n";
-                cin>>k>>x;
-                obj.Insert(k,x);
-                break;
-            case 6:
-                cout<<"elements in the list are:\n\n";
-                obj.Output();
-                break;
-            default:
-                cout<<"invalid choice\n";
-                break;
-        }  } while(ch>=1&&ch<=6);
-    system("pause");
+    int temp=7;
+    obj.Delete(1,temp);
+    
+    obj.Output();
+    cout<<endl;
+    
+    obj.Insert(1,21);
+    
+    obj.Output();
+    cout<<endl;
+    
+    
+    
+    
+    
     return 0;
 }
